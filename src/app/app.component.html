@@ -1,1 +1,7 @@
-<button click="OnClick()">show cities</button>
+<button (click)="onClick()">show cities</button>
+<button (click)="onWeather()">show weather</button>
+
+<div>City {{cities}}</div>
+<div>Temperature {{ temperature}}</div>
+<div>Pressure {{pressure}}</div>
+<div>Humidity{{humidity}}</div>
