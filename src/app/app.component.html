@@ -1,7 +1,12 @@
-<button (click)="onClick()">show cities</button>
-<button (click)="onWeather()">show weather</button>
-
-<div>City {{cities}}</div>
-<div>Temperature {{ temperature}}</div>
-<div>Pressure {{pressure}}</div>
-<div>Humidity{{humidity}}</div>
+<div>
+  <button (click)="onClick()">Cities:</button>
+  <div *ngFor="let mycity of cities">
+    <p>{{ cities }}</p>
+  </div>
+</div>
+<div>
+  <button (click)="onWeather()">Show Weather:</button>
+  <p>Temperature: {{ temperature }}</p>
+  <p>Pressure: {{ pressure }}</p>
+  <p>Humidity:{{ humidity }}</p>
+</div>

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, tap } from 'rxjs';
-import { state } from '@angular/animations';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +9,7 @@ import { state } from '@angular/animations';
 })
 export class AppComponent implements OnInit {
   title = 'weatherApi';
-  cities: string = ``;
+  cities = [];
   temperature = '';
   pressure = '';
   humidity = '';
@@ -32,9 +31,9 @@ export class AppComponent implements OnInit {
     const url = `${domain}/${endpoint}`;
     this.http
       .get(url, { params: APIparams })
-      .pipe(map((res: any) => res.data.current))
+      .pipe(map((res: any) => res.data))
       .subscribe((el: any) => {
-        this.cities = el;
+        this.cities = el.map((list: any) => list.city);
       });
   }
 
@@ -55,8 +54,8 @@ export class AppComponent implements OnInit {
       .pipe(map((res: any) => res.data.current.weather))
       .subscribe((el: any) => {
         this.temperature = el.tp;
-        this.humidity = el.humidity;
-        this.pressure = el.pressure;
+        this.humidity = el.hu;
+        this.pressure = el.pr;
       });
   }
 }
