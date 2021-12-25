@@ -64,4 +64,5 @@ export class AppComponent implements OnInit {
       this.pressure = el.data.current.weather.pr;
     });
   }
+  
 }
