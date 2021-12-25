@@ -39,7 +39,7 @@ export class AppComponent implements OnInit {
       });
   }
 
-  onWeather(event:any) {
+  onWeather(event: any) {
     this.city = event.target.textContent;
     const domain = 'http://api.airvisual.com';
     const endpoint = 'v2/city';
@@ -64,5 +64,4 @@ export class AppComponent implements OnInit {
       this.pressure = el.data.current.weather.pr;
     });
   }
-  
 }
