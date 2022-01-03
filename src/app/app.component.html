@@ -1,13 +1,5 @@
 <div>
   <button (click)="onClick()">Cities:</button>
-    <p>{{ cities }}</p>
+    <app-show-weather [cities]="cities" >{{ cities }}</app-show-weather>
 </div>
 
-<div>
-  <button (click)="onWeather($event)" *ngFor="let mycity of this.cities">
-    {{ mycity }}
-  </button>
-  <p>Temperature: {{ temperature }}</p>
-  <p>Pressure: {{ pressure }}</p>
-  <p>Humidity:{{ humidity }}</p>
-</div>
